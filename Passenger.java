@@ -19,11 +19,23 @@ public class Passenger{
         } else {
             dirUp = false;
         }
-        
+
     }
 
 
     /* methods */
+
+    public int getDes(){
+        return destination;
+    }
+
+    public int getLoc(){
+        return location;
+    }
+
+    public boolean getDir(){
+        return dirUp;
+    }
 
 
 
