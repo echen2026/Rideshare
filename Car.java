@@ -7,6 +7,7 @@ public class Car {
     private boolean dirUp;
     private String ID;
     private static int idgen;
+    private int revenue;
     
 
     /* constructors */
@@ -30,4 +31,7 @@ public class Car {
         idgen++;
 
     }
+
+    /* methods */
+    
 }
