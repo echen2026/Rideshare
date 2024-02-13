@@ -33,6 +33,16 @@ public class Car {
     }
 
     /* methods */
+
+    public String listPass(){
+        String overall = "Passengers in Car " + ID + ":";
+        for(int i = 0; i < pass.size(); i++){
+            overall += "\n" + pass.get(i).toString();
+        }
+        return overall;
+    }
+
+
     public int needDropoff(){
         for(int i = 0; i < pass.size(); i++){
             if (pass.get(i).getDes() == destination){
