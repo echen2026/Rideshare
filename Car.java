@@ -33,5 +33,23 @@ public class Car {
     }
 
     /* methods */
-    
+    public int needDropoff(){
+        for(int i = 0; i < pass.size(); i++){
+            if (pass.get(i).getDes() == destination){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Passenger dropoff(int pos){
+        if(pos != -1){
+            Passenger temp = pass.get(pos);
+            pass.remove(pos);
+            return temp;
+        }
+        return null;
+
+    }
+
 }
