@@ -47,6 +47,17 @@ public class Passenger{
         return ID;
     }
 
+    public String toString(){
+        String directiontext = "";
+        if(dirUp == false){
+            directiontext = "Down";
+        } else {
+            directiontext = "Up";
+        }
+        
+        return "Passenger ID: " + ID + " | Destination: " + destination + " | Direction: " + directiontext;
+    }
+
 
 
 }
