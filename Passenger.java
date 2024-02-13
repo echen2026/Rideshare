@@ -4,6 +4,8 @@ public class Passenger{
     private boolean dirUp;
     private int destination;
     private int location;
+    private String ID;
+    private static int idgen;
 
     /* constructors */
     public Passenger(){
@@ -19,6 +21,10 @@ public class Passenger{
         } else {
             dirUp = false;
         }
+
+
+        ID = "P" + idgen;
+        idgen++;
 
     }
 
@@ -37,7 +43,9 @@ public class Passenger{
         return dirUp;
     }
 
-
+    public String getID(){
+        return ID;
+    }
 
 
 
