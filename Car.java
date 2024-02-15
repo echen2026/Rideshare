@@ -42,6 +42,16 @@ public class Car {
         return overall;
     }
 
+    public void move(){
+        if(destination != location){
+            if(dirUp){
+                location++;
+            } else {
+                location--;
+            }
+        }
+    }
+
 
     public int needDropoff(){
         for(int i = 0; i < pass.size(); i++){
@@ -59,7 +69,6 @@ public class Car {
             return temp;
         }
         return null;
-
     }
 
 }
