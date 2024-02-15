@@ -46,7 +46,7 @@ public class Station {
     }
 
     public String listPass(){
-        String overall = "Passengers at Station " + ID + ":";
+        String overall = "Passengers waiting at Station " + ID + ":";
         for(int i = 0; i < passDirUp.size(); i++){
             overall += "\n" + passDirUp.get(i).toString();
         }
