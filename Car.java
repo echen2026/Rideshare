@@ -71,4 +71,20 @@ public class Car {
         return null;
     }
 
+    public int getDes(){
+        return destination;
+    }
+
+    public int getLoc(){
+        return location;
+    }
+
+    public boolean getDir(){
+        return dirUp;
+    }
+
+    public int getRev(){
+        return revenue;
+    }
+
 }
