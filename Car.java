@@ -42,6 +42,9 @@ public class Car {
                 location--;
             }
         }
+
+        //calculate revenue
+        revenue+=pass.size();
     }
 
 
