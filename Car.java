@@ -34,14 +34,6 @@ public class Car {
 
     /* methods */
 
-    public String listPass(){
-        String overall = "Passengers in Car " + ID + ":";
-        for(int i = 0; i < pass.size(); i++){
-            overall += "\n" + pass.get(i).toString();
-        }
-        return overall;
-    }
-
     public void move(){
         if(destination != location){
             if(dirUp){
@@ -71,6 +63,10 @@ public class Car {
         return null;
     }
 
+    public void pickup(Passenger p){
+        pass.add(p);
+    }
+
     public int getDes(){
         return destination;
     }
@@ -85,6 +81,18 @@ public class Car {
 
     public int getRev(){
         return revenue;
+    }
+
+    public int getOccupancy(){
+        return pass.size();
+    }
+
+    public String listPass(){
+        String overall = "Passengers in Car " + ID + ":";
+        for(int i = 0; i < pass.size(); i++){
+            overall += "\n" + pass.get(i).toString();
+        }
+        return overall;
     }
 
 }
