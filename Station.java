@@ -22,7 +22,17 @@ public class Station {
         return ID;
     }
 
-    public void pickup(Passenger p){
+    public Passenger putIntoCar(Passenger p){
+        Passenger temp = p;
+        if(p.getDir()){
+            passDirUp.remove(p);
+        } else {
+            passDirDown.remove(p);
+        }
+        return temp;
+    }
+
+    public void getFromCar(Passenger p){
         if(Integer.toString(p.getDes())==ID){
 
         } else {
