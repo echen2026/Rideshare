@@ -27,6 +27,18 @@ public class Road {
 
     /* methods */
     public String toString(){
-        
+        String overall = "";
+
+        for(int i = 0; i < stations.size(); i++){
+            overall += stations.get(i).toString();
+        }
+
+        overall += "\n";
+
+        for(int i = 0; i < cars.size(); i++){
+            overall += cars.get(i).listPass();
+        }
+
+        return overall;
     }
 }
