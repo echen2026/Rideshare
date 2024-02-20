@@ -9,7 +9,7 @@ public class Road {
     /* constructors */
     public Road(int carAmt, int passAmt){
         stations = new ArrayList<Station>();
-        for(int i = 0; i < 32; i++){
+        for(int i = 0; i < 36; i++){
             stations.add(new Station());
         }
 
@@ -26,17 +26,26 @@ public class Road {
 
 
     /* methods */
+
+    public void move(){
+
+    }
+
+
+    
     public String toString(){
         String overall = "";
 
         for(int i = 0; i < stations.size(); i++){
-            overall += stations.get(i).toString();
+            overall += stations.get(i).listPass();
+            overall += "\n\n";
         }
 
         overall += "\n";
 
         for(int i = 0; i < cars.size(); i++){
             overall += cars.get(i).listPass();
+            overall += "\n";
         }
 
         return overall;
