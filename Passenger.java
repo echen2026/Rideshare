@@ -10,10 +10,10 @@ public class Passenger{
     /* constructors */
     public Passenger(){
 
-        int randomDestination = (int) (Math.random()*36);
+        int randomDestination = (int) (Math.random()*32);
         destination = randomDestination;
 
-        int randomStart = (int) (Math.random()*36);
+        int randomStart = (int) (Math.random()*32);
         location = randomStart;
 
         if(destination > location){
@@ -54,7 +54,7 @@ public class Passenger{
         } else {
             directiontext = "Up";
         }
-        
+
         return "Passenger ID: " + ID + " | Destination: " + destination + " | Direction: " + directiontext;
     }
 
