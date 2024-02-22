@@ -91,7 +91,7 @@ public class Car {
     }
 
     public String listPass(){
-        String overall = "Passengers in Car " + ID + ":";
+        String overall = "Car " + ID + " at Station " + location + " | " + "Passengers in Car " + ID + ":";
         for(int i = 0; i < pass.size(); i++){
             overall += "\n" + pass.get(i).toString();
         }
