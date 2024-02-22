@@ -9,6 +9,11 @@ public class RideshareTester {
 
         Road r = new Road(3, 6);
         System.out.println(r);
+
+        r.move();
+        r.move();
+
+        System.out.println(r);
     }
 
 
