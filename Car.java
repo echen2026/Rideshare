@@ -91,7 +91,15 @@ public class Car {
     }
 
     public String listPass(){
-        String overall = "Car " + ID + " at Station " + location + " | " + "Passengers in Car " + ID + ":";
+
+        String directiontext = "";
+        if(dirUp == false){
+            directiontext = "Down";
+        } else {
+            directiontext = "Up";
+        }
+
+        String overall = "Car " + ID + " at Station " + location + " | Direction: " +  directiontext + " | " + "Passengers in Car " + ID + ":";
         for(int i = 0; i < pass.size(); i++){
             overall += "\n" + pass.get(i).toString();
         }
