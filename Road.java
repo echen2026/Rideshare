@@ -21,7 +21,12 @@ public class Road {
 
         for(int i = 0; i < passAmt; i++){
             Passenger p = new Passenger((int) (Math.random()*32));
-            stations.get((int) (Math.random()*32)).add(p);
+            int randS = (int) (Math.random()*32);
+            while(p.getDes()==randS){
+                randS = (int) (Math.random()*32);
+            }
+            stations.get(randS).add(p);
+            
         }
     }
 
