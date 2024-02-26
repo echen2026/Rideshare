@@ -2,64 +2,38 @@ import java.util.*;
 public class Station {
 
     /* fields */
-    private ArrayList<Passenger> passDirUp;
-    private ArrayList<Passenger> passDirDown;
-    private String ID;
+    private ArrayList<Passenger> pass;
+    private int ID;
     private static int idgen;
 
     /* constructors */
     public Station(){
-        passDirUp = new ArrayList<Passenger>();
-        passDirDown = new ArrayList<Passenger>();
+        pass = new ArrayList<Passenger>();
 
-        ID = "S" + idgen;
+        ID = idgen;
         idgen++;        
     }
 
 
     /* methods */
-    public String getID(){
-        return ID;
+
+    public void remove(Passenger p){
+        pass.remove(p);
     }
 
-    public Passenger putIntoCar(Passenger p){
-        Passenger temp = p;
-        if(p.getDir()){
-            passDirUp.remove(p);
-        } else {
-            passDirDown.remove(p);
-        }
-        return temp;
+    public void add(Passenger p){
+        pass.add(p);
     }
-
-    public void getFromCar(Passenger p){
-        if(Integer.toString(p.getDes())==ID){
-
-        } else {
-            if(p.getDir()){
-                passDirUp.add(p);
-            } else {
-                passDirDown.add(p);
-            }
-        }
         
-    }
 
-    public ArrayList<Passenger> getDirUp(){
-        return passDirUp;
-    }
-
-    public ArrayList<Passenger> getDirDown(){
-        return passDirDown;
+    public ArrayList<Passenger> getPass(){
+        return pass;
     }
 
     public String listPass(){
         String overall = "Passengers waiting at Station " + ID + ":";
-        for(int i = 0; i < passDirUp.size(); i++){
-            overall += "\n" + passDirUp.get(i).toString();
-        }
-        for(int i = 0; i < passDirDown.size(); i++){
-            overall += "\n" + passDirDown.get(i).toString();
+        for(int i = 0; i < pass.size(); i++){
+            overall += "\n" + pass.get(i).toString();
         }
         return overall;
     }
