@@ -45,6 +45,14 @@ public class Station {
         
     }
 
+    public ArrayList<Passenger> getDirUp(){
+        return passDirUp;
+    }
+
+    public ArrayList<Passenger> getDirDown(){
+        return passDirDown;
+    }
+
     public String listPass(){
         String overall = "Passengers waiting at Station " + ID + ":";
         for(int i = 0; i < passDirUp.size(); i++){
