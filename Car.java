@@ -5,7 +5,7 @@ public class Car {
     private int destination;
     private int location;
     private boolean dirUp;
-    private String ID;
+    private int ID;
     private static int idgen;
     private int revenue;
     
@@ -15,10 +15,10 @@ public class Car {
 
         pass = new ArrayList<Passenger>();
 
-        int randomDestination = (int) (Math.random()*36);
+        int randomDestination = (int) (Math.random()*32);
         destination = randomDestination;
 
-        int randomStart = (int) (Math.random()*36);
+        int randomStart = (int) (Math.random()*32);
         location = randomStart;
 
         if(destination > location){
@@ -27,7 +27,7 @@ public class Car {
             dirUp = false;
         }
 
-        ID = "C" + idgen;
+        ID = idgen;
         idgen++;
 
     }
@@ -67,7 +67,9 @@ public class Car {
     }
 
     public void pickup(Passenger p){
-        pass.add(p);
+        if(pass.size() <= 3){
+            pass.add(p);
+        }
     }
 
     public int getDes(){
@@ -86,8 +88,8 @@ public class Car {
         return revenue;
     }
 
-    public int getOccupancy(){
-        return pass.size();
+    public ArrayList<Passenger> getPass(){
+        return pass;
     }
 
     public String listPass(){
