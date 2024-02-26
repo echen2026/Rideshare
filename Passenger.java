@@ -14,10 +14,14 @@ public class Passenger{
         idgen++;
 
     }
-    
+
     /* methods */
     public int getDes(){
         return destination;
+    }
+
+    public int getID(){
+        return ID;
     }
 
 }
