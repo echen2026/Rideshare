@@ -142,8 +142,10 @@ public class Road {
     public ArrayList<Car> getCars(){
         return cars;
     }
-    
 
+    public double getRev(){
+        return revenue;
+    }
     
     public String toString(){
         String overall = "";
