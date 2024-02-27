@@ -17,7 +17,7 @@ public class Station {
 
     /* methods */
 
-    public void remove(Passenger p){
+    public void delete(Passenger p){
         pass.remove(p);
     }
 
