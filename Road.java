@@ -4,11 +4,13 @@ public class Road {
     private ArrayList<Car> cars;
     private ArrayList<Station> stations;
     private int revenue;
+    private int carAmt;
 
 
 
     /* constructors */
-    public Road(int carAmt, int passAmt){
+    public Road(int myCarAmt, int passAmt){
+        carAmt = myCarAmt;
         stations = new ArrayList<Station>();
         for(int i = 0; i <= 31; i++){
             stations.add(new Station());
@@ -107,12 +109,13 @@ public class Road {
 
         for(int i = 0; i < cars.size(); i++){
             overall += cars.get(i).listPass();
-            overall += "\n";
+            overall += "\n\n";
         }
 
         overall += "\n";
 
         overall += "Total Revenue: " + revenue;
+        overall += "Revenue per Car: " + revenue/carAmt;
 
         return overall;
     }
