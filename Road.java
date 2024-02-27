@@ -43,13 +43,32 @@ public class Road {
         for(int s = 0; s < stations.size(); s++){
 
             ArrayList<Passenger> pass = stations.get(s).getPass();
+            //separating passengers into 2 directions
+            ArrayList<Passenger> passUp = new ArrayList<Passenger>();
+            ArrayList<Passenger> passDown = new ArrayList<Passenger>();
+            for(int i = 0; i < pass.size(); i++){
+                if(pass.get(i).getDes() > s){
+                    passUp.add(pass.get(i));
+                } else {
+                    passDown.add(pass.get(i));
+                }
+            }
+
             for(int c = 0; c < cars.size(); c++){
-                if(cars.get(c).getLoc() == s){
+                if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==true){
                     ArrayList<Passenger> carPass = cars.get(c).getPass();
-                    while(carPass.size() < 4 && pass.size() > 0){
-                        if(pass.size() > 0){
-                            cars.get(c).pickup(pass.get(0));
-                            stations.get(s).delete(pass.get(0));
+                    while(carPass.size() < 4 && passUp.size() > 0){
+                        if(passUp.size() > 0){
+                            cars.get(c).pickup(passUp.get(0));
+                            stations.get(s).delete(passUp.get(0));
+                        }
+                    }
+                } else if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==false){
+                    ArrayList<Passenger> carPass = cars.get(c).getPass();
+                    while(carPass.size() < 4 && passDown.size() > 0){
+                        if(passDown.size() > 0){
+                            cars.get(c).pickup(passDown.get(0));
+                            stations.get(s).delete(passDown.get(0));
                         }
                     }
                 }
@@ -84,6 +103,20 @@ public class Road {
 
     }
 
+
+    public void checkPassengersDropoff(Car c){
+        ArrayList<Passenger> pass = c.getPass();
+        for(int p = 0; p < pass.size(); p++){
+            if(c.getLoc()==pass.get(p).getDes()){
+
+            }
+        }
+    }
+
+    public void dropoffPassengers(){
+
+    }
+
     public void move(){
 
         for(int c = 0; c < cars.size(); c++){
@@ -95,6 +128,7 @@ public class Road {
 
             
         }
+        putPassengersInCars();
 
     }
 
