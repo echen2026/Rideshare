@@ -102,7 +102,7 @@ public class Car {
             directiontext = "Up";
         }
 
-        String overall = "Car " + ID + " at Station " + location + " | Direction: " +  directiontext + " | " + "Passengers in Car " + ID + ":";
+        String overall = "Car " + ID + " at Station " + location + " | to Station " + destination + " | Direction: " +  directiontext + " | " + "Passengers in Car " + ID + ":";
         for(int i = 0; i < pass.size(); i++){
             overall += "\n" + pass.get(i).toString();
         }
