@@ -53,22 +53,29 @@ public class Road {
                     passDown.add(pass.get(i));
                 }
             }
-
+            //seeing if the car is at the station and its going in a certain direction
             for(int c = 0; c < cars.size(); c++){
                 if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==true){
                     ArrayList<Passenger> carPass = cars.get(c).getPass();
-                    while(carPass.size() < 4 && passUp.size() > 0){
-                        if(passUp.size() > 0){
+                    for(int i = 0; i < passUp.size(); i++){
+                        
+                        if(carPass.size() < 4){
                             cars.get(c).pickup(passUp.get(0));
                             stations.get(s).delete(passUp.get(0));
+                            passUp.remove(i);
+                            i--;
                         }
+                            
+                        
                     }
                 } else if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==false){
                     ArrayList<Passenger> carPass = cars.get(c).getPass();
-                    while(carPass.size() < 4 && passDown.size() > 0){
-                        if(passDown.size() > 0){
+                    for(int i = 0; i < passDown.size(); i++){
+                        if(carPass.size() < 4){
                             cars.get(c).pickup(passDown.get(0));
                             stations.get(s).delete(passDown.get(0));
+                            passDown.remove(i);
+                            i--;
                         }
                     }
                 }
@@ -108,7 +115,7 @@ public class Road {
         ArrayList<Passenger> pass = cars.get(c).getPass();
         for(int p = 0; p < pass.size(); p++){
             if(cars.get(c).getLoc()==pass.get(p).getDes()){
-                station.add(pass.get(p));
+                stations.get(cars.get(c).getLoc()).add(pass.get(p));
                 cars.get(c).remove(p);
             }
         }
@@ -123,6 +130,8 @@ public class Road {
             if(carIsAtDestination(cars.get(c))){
                 deleteCar(cars.get(c));
             }
+
+            dropoff(c);
 
             
         }
