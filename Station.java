@@ -1,5 +1,6 @@
 import java.util.*;
 public class Station {
+    //this class is kept simple - only has an arraylist of passengers waiting, simple methods to add and remove passengers from that as well.
 
     /* fields */
     private ArrayList<Passenger> pass;

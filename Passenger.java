@@ -1,4 +1,5 @@
 public class Passenger{
+    //simple class, passenger only knows destination (and ID for tostring)
 
     /* fields */
     private int destination;
