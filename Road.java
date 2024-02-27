@@ -132,9 +132,12 @@ public class Road {
 
             if(carIsAtDestination(cars.get(c))){
                 deleteCar(cars.get(c));
+            
+            } else {
+                dropoff(c);
             }
             
-            dropoff(c);
+            
 
             
         }
