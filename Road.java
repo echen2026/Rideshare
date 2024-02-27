@@ -104,18 +104,16 @@ public class Road {
     }
 
 
-    public void checkPassengersDropoff(Car c){
-        ArrayList<Passenger> pass = c.getPass();
+    public void dropoff(int c){
+        ArrayList<Passenger> pass = cars.get(c).getPass();
         for(int p = 0; p < pass.size(); p++){
-            if(c.getLoc()==pass.get(p).getDes()){
-
+            if(cars.get(c).getLoc()==pass.get(p).getDes()){
+                station.add(pass.get(p));
+                cars.get(c).remove(p);
             }
         }
     }
 
-    public void dropoffPassengers(){
-
-    }
 
     public void move(){
 
