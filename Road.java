@@ -86,15 +86,22 @@ public class Road {
 
     public void move(){
 
-        for(Car c : cars){
-            c.move();
+        for(int c = 0; c < cars.size(); c++){
+            cars.get(c).move();
 
+            if(carIsAtDestination(cars.get(c))){
+                deleteCar(cars.get(c));
+            }
 
             
         }
 
     }
 
+    public ArrayList<Car> getCars(){
+        return cars;
+    }
+    
 
     
     public String toString(){
@@ -116,6 +123,7 @@ public class Road {
 
         overall += "Total Revenue: " + revenue;
         overall += "\nRevenue per Car: " + revenue/carAmt;
+        overall += "\n";
 
         return overall;
     }
