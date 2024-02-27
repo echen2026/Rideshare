@@ -9,6 +9,7 @@ public class Car {
     private static int idgen;
     private int revenue;
     
+    
 
     /* constructors */
     public Car(){
