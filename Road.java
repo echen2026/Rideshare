@@ -28,12 +28,68 @@ public class Road {
             stations.get(randS).add(p);
             
         }
+
+        putPassengersInCars();
     }
 
 
     /* methods */
 
+
+    public void putPassengersInCars(){
+
+        for(int s = 0; s < stations.size(); s++){
+
+            ArrayList<Passenger> pass = stations.get(s).getPass();
+            for(int c = 0; c < cars.size(); c++){
+                if(cars.get(c).getLoc() == s){
+                    ArrayList<Passenger> carPass = cars.get(c).getPass();
+                    while(carPass.size() < 4 && pass.size() > 0){
+                        if(pass.size() > 0){
+                            cars.get(c).pickup(pass.get(0));
+                            stations.get(s).delete(pass.get(0));
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    public boolean carIsAtDestination(Car c){
+
+        if(c.getDes()==c.getLoc()){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public void deleteCar(Car c){
+        int station = c.getLoc();
+        ArrayList<Passenger> pass = c.getPass();
+
+        for(int i = 0; i < pass.size(); i++){
+            stations.get(station).add(pass.get(i));
+        }
+
+        revenue += c.getRev();
+        cars.remove(c);
+        
+
+    }
+
     public void move(){
+
+        for(Car c : cars){
+            c.move();
+
+
+            
+        }
 
     }
 
