@@ -130,7 +130,8 @@ public class Road {
             if(carIsAtDestination(cars.get(c))){
                 deleteCar(cars.get(c));
             }
-             dropoff(c);
+            
+            dropoff(c);
 
             
         }
