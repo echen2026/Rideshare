@@ -12,9 +12,24 @@ public class RideshareTester {
 
         while(r.getCars().size()>0){
             r.move();
-        }        
+        }
 
         System.out.println(r);
+
+        /*
+        int totalrevenue = 0;
+
+        
+        for(int i = 0; i < 100; i++){
+            Road r = new Road(10, 40);
+            while(r.getCars().size()>0){
+            r.move();
+            }
+            totalrevenue += r.getRev();
+        }
+        
+        System.out.println(totalrevenue/100);
+        */
     }
 
 
