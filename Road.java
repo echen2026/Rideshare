@@ -3,7 +3,7 @@ public class Road {
     /* fields */
     private ArrayList<Car> cars;
     private ArrayList<Station> stations;
-    private int revenue;
+    private double revenue;
     private int carAmt;
 
 
@@ -115,7 +115,7 @@ public class Road {
         overall += "\n";
 
         overall += "Total Revenue: " + revenue;
-        overall += "Revenue per Car: " + revenue/carAmt;
+        overall += "\nRevenue per Car: " + revenue/carAmt;
 
         return overall;
     }
