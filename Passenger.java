@@ -24,4 +24,8 @@ public class Passenger{
         return ID;
     }
 
+    public String toString(){
+        return "Passenger " + ID + " | Destination: " + destination;
+    }
+
 }
