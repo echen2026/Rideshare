@@ -48,7 +48,6 @@ public class Car {
         revenue+=pass.size();
     }
 
-
     public int needDropoff(){
         for(int i = 0; i < pass.size(); i++){
             if (pass.get(i).getDes() == destination){
@@ -65,6 +64,10 @@ public class Car {
             return temp;
         }
         return null;
+    }
+
+    public void remove(int p){
+        pass.remove(p);
     }
 
     public void pickup(Passenger p){
