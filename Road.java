@@ -23,7 +23,9 @@ public class Road {
 
         for(int i = 0; i < passAmt; i++){
             Passenger p = new Passenger((int) (Math.random()*32));
+            //randS = random station
             int randS = (int) (Math.random()*32);
+            //makes sure that the passenger destination cannot be the location it starts at
             while(p.getDes()==randS){
                 randS = (int) (Math.random()*32);
             }
@@ -68,6 +70,7 @@ public class Road {
                             
                         
                     }
+                    //repeating the same thing as above but for the down direction
                 } else if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==false){
                     ArrayList<Passenger> carPass = cars.get(c).getPass();
                     for(int i = 0; i < passDown.size(); i++){
