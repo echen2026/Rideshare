@@ -7,12 +7,11 @@ public class RideshareTester {
         System.out.println();
 
 
-        Road r = new Road(3, 6);
+        Road r = new Road(10, 40);
         System.out.println(r);
 
-        for(int i = 1; i < 100; i++){
+        while(r.getCars().size()>0){
             r.move();
-
         }        
 
         System.out.println(r);
