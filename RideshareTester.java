@@ -28,7 +28,7 @@ public class RideshareTester {
 
         
         for(int i = 0; i < 100; i++){
-            Road r = new Road(10, 40); //change the car and passenger amount here
+            Road r = new Road(10, 40); //change the car and passenger amount here (myCarAmt, passAmt)
             while(r.getCars().size()>0){
             r.move();
             }
