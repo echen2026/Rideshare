@@ -29,8 +29,8 @@ I also faced a lot of `IndexOutOfBoundsException` errors in `for` loops that wer
 
 ### Results
 
-By calculating the average of 100 road simulations at a time, I found that the revenue of the cars for **10 cars, 40 passengers** was in between **$24-$27** 95% of the time. 
+By calculating the average of 100 road simulations at a time, I found that the revenue of the cars for **10 cars, 40 passengers** was in between __**$24-$27**__ 95% of the time. 
 
-Using the same method, I found that the revenue of the cars for **20 cars, 50 passengers** was in between **$22-$24** 95% of the time.
+Using the same method, I found that the revenue of the cars for **20 cars, 50 passengers** was in between __**$22-$24**__ 95% of the time.
 
-We can conclude that **10 cars, 40 passengers** is the scenario that produces a higher revenue per car.
+We can conclude that __**10 cars, 40 passengers**__ is the scenario that produces a higher revenue per car.
