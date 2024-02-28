@@ -3,6 +3,8 @@ public class RideshareTester {
 
 
     public static void main(String[] args) {
+
+        //refer to README to understand the codeblock
         /* 
         System.out.println("Rideshare Project");
         System.out.println();
@@ -21,12 +23,12 @@ public class RideshareTester {
 
 
 
-        
+        /*  */ //codeblock the following code to run the first bit that is already commentblocked
         double totalrevenue = 0;
 
         
         for(int i = 0; i < 100; i++){
-            Road r = new Road(20, 50); //change the car and passenger amount here
+            Road r = new Road(10, 40); //change the car and passenger amount here
             while(r.getCars().size()>0){
             r.move();
             }
